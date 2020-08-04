@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+    *{ box-sizing:border-box;}
+
+body,html{
+    margin:5px;
+    height:100%;
+}
+
+    tabs{
+    background-color: black;
+    color:black;
+    float:left;
+    cursor:pointer;
+    padding: 14px 16px;
+    font-size:28px;
+    width:33%;
+    }
+
+.tabs:hover{
+background-color: darkgray;
+}
+
+.content{
+color:black;
+display:none;
+padding:100px 20px;
+height:100%;
+}
+
+#Home {background-color: skyblue;}
+#Contact{background-color: skyblue;}
+#About{background-color: skyblue;}
+
+</style>
+
+</head>
+
+<body>
+
+<button class="tabs" id=openFirst onclick="loadTab('Home',this,'grey');"> Home </button>
+<button class="tabs" onclick="loadTab('Contact',this,'grey');"> Contact  </button>
+<button class="tabs" onclick="loadTab('About',this,'grey');"> About </button>
+
+
+
+<div id="Home" class="content">
+    <h2> Home page. </h2>
+
+</div>
+<div id="Contact" class="content">
+    <h2> Contact page. </h2>
+
+</div>
+ <div id="About" class="content">
+    <h2> About me! My name is Cooper G and my favorite animal is a cat. I live in the San Fransisco bay area with my mom, dad, and brother. Here is a picture of me!
+        <img src="Self Portrait.png"; 50%/>
+    </h2>
+<!--stuff about me-->
+
+</div>
+
+<script>
+    function loadTab(pageName,elmnt,color) {
+  var i, tabcontent, tabs;
+  tabcontent = document.getElementsByClassName("content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tabs = document.getElementsByClassName("tabs");
+  for (i = 0; i < tabs.length; i++) {
+    tabs[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+  }
+
+        //click on the default page
+        document.getElementById("openFirst").click();
+    </script>
+</body>
+
+
+</html>
